@@ -1,0 +1,5 @@
+# delivery_api_project/application/interfaces/__init__.py
+from.i_cliente_repository import IClienteRepository
+from.i_restaurante_repository import IRestauranteRepository
+from.i_categoria_produto_repository import ICategoriaProdutoRepository
+from.i_produto_repository import IProdutoRepository
