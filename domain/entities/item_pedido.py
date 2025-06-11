@@ -7,7 +7,7 @@ class ItemPedido:
                  produto_id: uuid.UUID,
                  quantidade: int,
                  preco_unitario_compra: Decimal,
-                 item_pedido_id: Optional = None,
+                 item_pedido_id: Optional[int] = None,
                  observacoes_item: Optional[str] = None
                 ):
         self.id: uuid.UUID = item_pedido_id if item_pedido_id is not None else uuid.uuid4()
@@ -46,11 +46,7 @@ class ItemPedido:
         def __eq__(self, other):
             if not isinstance(other, ItemPedido):
                 return False
-        # Itens são geralmente comparados por ID se já persistidos,
-        # ou por conteúdo se ainda não têm ID (ex: ao montar um carrinho).
-        # Para simplificar, vamos usar o ID por enquanto.
-        # Se for um item novo (sem ID), a comparação de identidade de objeto (is) seria usada.
-            
+       
             return self.id == other.id
         
         def __hash__(self):
